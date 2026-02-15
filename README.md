@@ -1,5 +1,5 @@
 # Exceptions-in-Java
-# Learning about Exceptions and Exception Handling in Java
+# Learning about Exceptions and Exception Handling in Java (Mini Project at the end)
 
 ## What is an Exception?
 * An Exception is an event which acn occur during the progam execution that disrupts the normal flow of instructions.
@@ -41,3 +41,29 @@
   * Use Assertions
   * Avoid using <code>try-catch</code> blocks for unchecked exceptions
   * Document the exception to inform other programmers
+ 
+
+# Mini Project: Student Grade Management System (Exception Handling)
+
+Create a console-based system where:
+1. User enter:
+   * Student name
+   * Number of Subjects
+2. User enters marks for each subject.
+3. System calculates average.
+4. Assign grade:
+   * 75+ = Distinction
+   * 50 - 74 = Pass
+   * Below 50 = Fail
+### Exception Handling Requirements (Important):
+You must handle:
+1. <code>InputMismatchException</code>
+2. <code>NegativeMarkException</code>
+3. <code>MarkOutOfRangeException</code>
+4. Division by zero (if subjects = 0)
+5. Invalid menu choice
+6. Use:
+   * At least 2 custom exception
+   * <code>finally</code> block
+   * Multi-catch
+   * <code>Throws</code>
