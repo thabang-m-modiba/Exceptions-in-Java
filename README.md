@@ -15,3 +15,29 @@
 * The primary purpose of Checked Exception is to ensure that the programmer doesn't ignore the error handling.
 * Common examples of checked Exceptions:
   * <code>IOException</code> - Occurs during input and output operations.
+  * <code>SQLException</code> - Arises during onteractions with databases.
+  * <code>ClassNotFoundException</code> - Occurs when trying to access a class that doesn't exist.
+* Best Practices for handling Checked Exceptions:
+  * Use a <code>try-catch</code> block.
+  * Use the <code>Throws Exception</code> clause appropriately. If it makes sense for the exception to be handled by the caller of the method, declare the exception in the method's throw clause.
+  * Provide useful errors.
+  * Avoid the <code>Throws</code> clause - Do not declare many Exceptions in the throw clause of the method signature, as it can make your API difficult to use.
+ 
+### Unchecked Exception
+* Characteristics of Unchecked Exception:
+  * They are not checked at compile time, meaning the compiler does not enforce handling them (Runtime checking).
+  * They are subclasses of <code>RuntimeException</code>.
+  * They indicate the programmer's errors. That is, they often result from flaws in the program logic such as accessing invalid array indexes or null objects.
+ 
+* Unchecked Exceptions typically represnt defects in the program.
+* They are used for issues that the application should not attempt to catch, as they are often irrecoverable. For instance, <code>NullPointerException</code> or <code>IndexOutOfBoundsException</code> usually points to bugs in the code that need to be fixed rather than caught and handled.
+* Some common examples of Unchecked Exceptions:
+  * <code>NullPointerException</code> - Throws when attempting to acceess an Object with a reference variable whose current value is null.
+  * <code>ArrayOutOfBoundsException</code> - Occurs when an array has been accessed with an illegal index.
+  * <code>ArithmeticException</code> - Throw when exceptional arithmetic conditions occur, such as dividing by zero.
+ 
+* Best practices for dealing with Unchecked Exceptions:
+  * Preventative programming
+  * Use Assertions
+  * Avoid using <code>try-catch</code> blocks for unchecked exceptions
+  * Document the exception to inform other programmers
