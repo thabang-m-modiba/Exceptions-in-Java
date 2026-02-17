@@ -3,6 +3,7 @@
  */
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 /**
  * Class for student
  */
@@ -22,9 +23,21 @@ public class Student {
         	String name = scanner.nextLine();
         	
         	for(int i = 0; i < subjectsAndMarks.length; i++) {
-        		System.out.println("Enter subject " + (i+1) + " and marks (E.g: physics-78): ");
-        		String subjectAndMark = scanner.nextLine();
-        		subjectsAndMarks[i] = subjectAndMark;
+        		String regex = "^[A-Za-z ]+-\\\\d{2}$";
+        		Pattern pattern = Pattern.compile(regex);
+        		
+        		while(true) {
+        			System.out.println("Enter subject " + (i+1) + " and marks (E.g: physics-78): ");
+        			String subjectAndMark = scanner.nextLine();
+        			
+        			if(pattern.matcher(subjectAndMark).matches()) {
+        				subjectsAndMarks[i] = subjectAndMark;
+        				break;
+        			}else {
+        				System.out.println("Invalid Input!: ");
+        			}
+        		}
+        		
         	}
         	dashboard = new StudentDashboard(name, subjectsAndMarks);
         }catch(InputMismatchException e) {
